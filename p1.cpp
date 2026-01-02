@@ -36,24 +36,33 @@ private:
              string& word, int r, int c, int index) 
              {
         
-        if (index == word.size() - 1) {
+        if (index == word.size() - 1) 
+        {
             return true;
         }
         
         visited[r][c] = true; // Mark current node
         vector<pair<int, int>> directions = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
         
-        for (const auto& dir : directions) {
+        for (const auto& dir : directions) 
+        {
             int newR = r + dir.first;
             int newC = c + dir.second;
             
-            if (newR < 0 || newR >= board.size() || newC < 0 || newC >= board[0].size()) continue;
-
-            if (visited[newR][newC]) continue;
-            
-            if (board[newR][newC] != word[index + 1]) continue;
-            
-            if (dfs(board, visited, word, newR, newC, index + 1)) {
+            if (newR < 0 || newR >= board.size() || newC < 0 || newC >= board[0].size()) 
+            {
+                continue;
+            }
+            if (visited[newR][newC])
+            {
+                continue;
+            }
+            if (board[newR][newC] != word[index + 1])
+            {
+                continue;
+            }
+            if (dfs(board, visited, word, newR, newC, index + 1)) 
+            {
                 return true;
             }
         }
