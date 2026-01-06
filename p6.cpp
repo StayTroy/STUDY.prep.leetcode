@@ -9,17 +9,14 @@ public:
     bool containsCycle(vector<vector<char>>& grid) 
     {
         int rows = grid.size();
+        int cols = grid[0].size();
         if(rows == 0) {return false; }
         
-        vector<vector<bool>> visited(rows);
-        for(int i = 0; i < rows; ++i)
-        {
-            visited[i] = vector<bool>(grid[i].size(), false);
-        }
+        vector<vector<bool>> visited(rows, vector<bool>(cols, false));
         
         for(int i = 0; i < rows; ++i)
         {
-            for(int j = 0; j < grid[i].size(); ++j)
+            for(int j = 0; j < cols; ++j)
             {
                 if(!visited[i][j])
                 {
@@ -55,7 +52,7 @@ private:
 
             if(grid[new_r][new_c] != grid[r][c]) {continue; }
             if(new_r == parent_r && new_c == parent_c) {continue; }
-
+            
             if(!visited[new_r][new_c])
             {
                 if(dfs(grid, visited, new_r, new_c, r, c)){return true; }
