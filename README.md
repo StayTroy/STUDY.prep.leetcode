@@ -14,4 +14,8 @@
 12. p12: Spiral Matrix 54
 13. p13: Valid Sudoku 36
 14. p14: Spiral Matrix II 59
+15. p15: Minimum Path Sum 64
+16. p16: 
+
+
 
