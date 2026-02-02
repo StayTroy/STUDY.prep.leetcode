@@ -18,6 +18,6 @@
 16. p16: 01 Matrix 542
 17. p17: Pacific Atlantic Water Flow 417
 18. p18: As Far from Land as Possible 1162
-
+19. p19: Grid Teleportation Traversal 3552
 
 
